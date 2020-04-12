@@ -4,6 +4,10 @@ const jwt = require('jsonwebtoken');
 
 const register = (req, res) => {
     const newUser = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        address: req.body.address,
+        phoneNumber: req.body.phoneNumber,
         email: req.body.email,
         password: req.body.password
     }

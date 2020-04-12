@@ -9,11 +9,11 @@ return re.test(email)
 
 const UserSchema = new Schema (
     {
-        // firstName: { type: String, required: true, minlength:2, maxlength: 30 },
-        // lastName: { type: String, required: true, minlength:2, maxlength: 30 },
-        // phoneNumber: { type: String, required: true },
-        // intro: { type: String },
-        // address: { type: String, required: true, minlength:2, maxlength: 100 },
+        firstName: { type: String, required: true, minlength:2, maxlength: 30 },
+        lastName: { type: String, required: true, minlength:2, maxlength: 30 },
+        phoneNumber: { type: String, required: true },
+        intro: { type: String },
+        address: { type: String, required: true, minlength:2, maxlength: 100 },
         email: {
             type: String,
             trim: true,
@@ -24,7 +24,7 @@ const UserSchema = new Schema (
             match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
         },
         password: { type: String, required: true, minlength: 8},
-        // groceriesList: [GroceriesList.schema],
+        groceriesList: [GroceriesList.schema],
     },
     {timestamps: true});
 
