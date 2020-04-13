@@ -14,6 +14,8 @@ const UserSchema = new Schema (
         phoneNumber: { type: String, required: true },
         intro: { type: String },
         address: { type: String, required: true, minlength:2, maxlength: 100 },
+        lat: { type: Number},
+        lng: { type: Number },
         email: {
             type: String,
             trim: true,

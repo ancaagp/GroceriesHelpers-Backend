@@ -4,7 +4,7 @@ const ctrl = require('../controllers');
 const verifyToken = require('../middleware/verification');
 
 // GroceriesList
-router.get('/groceries', verifyToken, ctrl.groceries.index);
+router.get('/groceries', ctrl.groceries.index);
 
 // User
 router.get('/users', ctrl.users.index)

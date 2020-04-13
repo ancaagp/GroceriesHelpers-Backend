@@ -13,6 +13,9 @@ const GroceriesSchema = new Schema (
         },
         status: [String],
         completed: Boolean,
+        address: String,
+        lat: Number,
+        lng: Number
     },
 {timestamps: true});
 
