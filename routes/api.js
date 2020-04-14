@@ -5,6 +5,10 @@ const verifyToken = require('../middleware/verification');
 
 // GroceriesList
 router.get('/groceries', ctrl.groceries.index);
+// router.get('/groceries/:id', ctrl.groceries.show);
+router.post('/groceries',verifyToken, ctrl.groceries.create);
+// router.put('/groceries/:id', ctrl.groceries.update);
+// router.delete('/groceries/:id', ctrl.groceries.destroy);
 
 // User
 router.get('/users', ctrl.users.index)
