@@ -9,6 +9,7 @@ router.get('/groceries', ctrl.groceries.index);
 router.post('/groceries',verifyToken, ctrl.groceries.create);
 // router.put('/groceries/:id', ctrl.groceries.update);
 // router.delete('/groceries/:id', ctrl.groceries.destroy);
+router.put('/groceries/:id/help', verifyToken, ctrl.groceries.help);
 
 // User
 router.get('/users', ctrl.users.index)

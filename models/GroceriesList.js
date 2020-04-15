@@ -7,7 +7,8 @@ const GroceriesSchema = new Schema (
         timeline: {
             type: String,
             enum: ['1', '2', '3'],
-            required: true
+            default: '2',
+            // required: true
         },
         description: String,
         photo: String,
@@ -22,7 +23,8 @@ const GroceriesSchema = new Schema (
         status: {
             type: String,
             enum: ['N', 'P', 'C'],
-            required: true
+            default: 'N',
+            // required: true
         },
         completed: Boolean,
         address: String,

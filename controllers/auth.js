@@ -9,7 +9,9 @@ const register = (req, res) => {
         address: req.body.address,
         phoneNumber: req.body.phoneNumber,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        lat: req.body.lat,
+        lng: req.body.lng
     }
   
     if (!newUser.email || !newUser.password) { 
@@ -38,7 +40,9 @@ const register = (req, res) => {
             const token = jwt.sign(
               {
                 email: savedUser.email,
-                _id: savedUser._id
+                _id: savedUser._id,
+                lat: savedUser.lat,
+                lng: savedUser.lng
               },
               process.env.JWT_SECRET,
               {
@@ -72,7 +76,9 @@ const register = (req, res) => {
           const token = jwt.sign(
             {
               email: foundUser.email,
-              _id: foundUser._id
+              _id: foundUser._id,
+              lat: foundUser.lat,
+              lng: foundUser.lng
             },
             process.env.JWT_SECRET,
             {
