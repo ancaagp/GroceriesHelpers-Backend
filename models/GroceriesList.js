@@ -7,8 +7,9 @@ const GroceriesSchema = new Schema (
         timeline: {
             type: String,
             enum: ['1', '2', '3'],
+            // 1 - Today, 2- By tomorrow, 3 - Some day this week
             default: '2',
-            // required: true
+            required: true
         },
         description: String,
         photo: String,
@@ -22,9 +23,9 @@ const GroceriesSchema = new Schema (
         },
         status: {
             type: String,
-            enum: ['N', 'P', 'C'],
-            default: 'N',
-            // required: true
+            enum: ['1', '2', '3'],
+            // 1 - New, 2 - In progress, 3 - Completed
+            default: '1',
         },
         completed: Boolean,
         address: String,

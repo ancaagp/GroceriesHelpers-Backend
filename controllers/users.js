@@ -7,7 +7,7 @@ const index = async (req, res) => {
     if (!user) return res.status(404).json({error: 'No users found!'});
     return res.json(user);
   } catch (err) {
-    return res.status(500).json('uh oh');
+    return res.status(500).json(err);
   }
 }
     
