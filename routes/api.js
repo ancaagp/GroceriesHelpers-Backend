@@ -8,7 +8,7 @@ router.get('/groceries', ctrl.groceries.index);
 router.get('/groceries/mygroceries', verifyToken, ctrl.groceries.myGroceries);
 router.post('/groceries', verifyToken, ctrl.groceries.create);
 // router.put('/groceries/:id', ctrl.groceries.update);
-// router.delete('/groceries/:id', ctrl.groceries.destroy);
+router.delete('/groceries/:id', verifyToken, ctrl.groceries.destroy);
 router.put('/groceries/:id/help', verifyToken, ctrl.groceries.help);
 router.put('/groceries/:id/complete', verifyToken, ctrl.groceries.complete);
 
