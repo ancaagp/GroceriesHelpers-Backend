@@ -23,12 +23,11 @@ const show = async (req, res) => {
 
 const update = async (req, res) => {
   try {
-    console.log(req.session);
-    const updatedUser = await db.User.findByIdAndUpdate(req.session.currentUser.id, req.body, { new: true });
+    const updatedUser = await db.User.findByIdAndUpdate(req.user._id, req.body, { new: true });
     if (!updatedUser) return res.status(404).json({error: 'User couldn\'t be updated!'});
     return res.json(updatedUser);
   } catch (err) {
-    return res.status(500).json(err);
+    return res.status(500).json({status: 400, error: 'User update went wrong, please try again'});
   }
 }
 
