@@ -16,7 +16,7 @@ const routes = require('./routes');
 const db = require('./models');
 
 const corsOptions = {
-    origin: ['http://localhost:3000'],
+    origin: [process.env.FRONTEND_URL],
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
     optionsSuccessStatus: 200,
