@@ -22,6 +22,8 @@ const corsOptions = {
     optionsSuccessStatus: 200,
 }
 
+console.log('FRONTEND URL: ' + process.env.FRONTEND_URL);
+
 // MIDDLEWARE
 app.use(cors(corsOptions));
 
