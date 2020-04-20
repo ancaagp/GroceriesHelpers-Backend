@@ -3,13 +3,15 @@ const Schema = mongoose.Schema;
 
 const GroceriesSchema = new Schema (
     {
-        groceries: [String],
+        groceries: {
+            type: String,
+            required: true,
+        },
         timeline: {
             type: String,
             enum: ['1', '2', '3'],
             // 1 - Today, 2- By tomorrow, 3 - Some day this week
             default: '2',
-            required: true
         },
         description: String,
         photo: String,

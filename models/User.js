@@ -10,10 +10,10 @@ return re.test(email)
 const UserSchema = new Schema (
     {
         firstName: { type: String, required: true, minlength:2, maxlength: 30 },
-        lastName: { type: String, required: true, minlength:2, maxlength: 30 },
-        phoneNumber: { type: String, required: true },
+        lastName: { type: String, minlength:2, maxlength: 30 },
+        phoneNumber: { type: String},
         intro: { type: String },
-        address: { type: String, required: true, minlength:2, maxlength: 100 },
+        address: { type: String, minlength:2, maxlength: 100 },
         lat: { type: Number},
         lng: { type: Number },
         email: {
