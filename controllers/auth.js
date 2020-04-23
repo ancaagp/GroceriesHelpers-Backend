@@ -15,7 +15,7 @@ const register = (req, res) => {
     }
   
     if (!newUser.email || !newUser.password) { 
-      res.sendStatus(400);
+      res.sendStatus(400).json({ error: 'Email or password missing.', errorCode: 1 });
       return;
     }
   
@@ -24,7 +24,7 @@ const register = (req, res) => {
         res.status(500).json(err);
         return;
       } else if (foundUser) {
-        res.status(400).json({ error: 'email already exists' });
+        res.status(400).json({ error: 'Email already exists.', errorCode: 2 });
         return;
       }
       
@@ -65,11 +65,11 @@ const register = (req, res) => {
         password: req.body.password
     }
   
-    if (!user.email || !user.password) return res.sendStatus(400);
+    if (!user.email || !user.password) return res.sendStatus(400).json(err);
   
     db.User.findOne({email: user.email}, (err, foundUser) => {
       if (err) return res.status(500).json(err);
-      if (!foundUser) return res.sendStatus(400);
+      if (!foundUser) return res.sendStatus(400).json(err);
   
       bcrypt.compare(user.password, foundUser.password, (err, match) => {
         if (match) {
@@ -90,7 +90,7 @@ const register = (req, res) => {
             token
           });
         } else {
-          return res.sendStatus(400);
+          return res.sendStatus(400).json(err);
         }
       })
     })
